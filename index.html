@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Flip Card Countdown Timer</title>
   <style>
-    body {
-      margin: 0;
-      background: #ffffff;
-      height: 100vh;
+    .timerWrapper {
+      transform-origin: center;
+
+      padding: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
     }
-
-    .timer-container {
+    
+   .timer-container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -197,9 +196,61 @@
         color:#ad1906;
         font-size: 80px;
         align-self: center;
-        margin: 0 5px;
+        margin: 0;
         font-family: 'Roboto Mono', monospace;
       }
+
+      @media (max-width: 1024px) {
+        .timerWrapper ,
+        .timer-container {
+          transform: scale(0.9);
+          
+        }
+        .timer-cards-wrapper {
+          gap: 10px;
+          
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .timerWrapper ,.timer-container {
+          transform: scale(0.75);
+        }
+        .timer-cards-wrapper {
+          gap: 5px;
+          
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .timerWrapper ,.timer-container {
+          
+          transform: scale(0.6);
+        }
+        .timer-cards-wrapper {
+          gap: 1px;
+        }
+      }
+      
+      @media (max-width: 360px) {
+        .timerWrapper ,.timer-container {
+          transform: scale(0.4);
+        }
+      h1{
+        font-size: 1.5rem;
+        margin-top :10px;
+        margin-bottom :10px;
+      }
+        .timer-cards-wrapper {
+          gap: 0px;
+        }
+        
+      }
+        }
+       
+      }
+      
+      
   </style>
 </head>
 <body>
@@ -208,9 +259,14 @@
       let timerTitle;
       let timerContainer;
       let timerButton;
-      
+      let timerWrapper;
+
 function createTimerElements() {
 
+  timerWrapper = document.createElement('div');
+  timerWrapper.className = 'timerWrapper';
+  document.body.appendChild(timerWrapper);
+  // Create the timer container
 
   // Main container
   timerContainer = document.createElement('div');
@@ -218,7 +274,7 @@ function createTimerElements() {
 
   
   timerTitle = document.createElement('h1');
-  timerTitle.textContent = 'عروض اليوم أقوى من الخيال – الوقت ينفذ';
+  timerTitle.textContent = '!عروض اليوم أقوى من الخيال – الوقت ينفذ';
  timerContainer.appendChild(timerTitle);
 
 
@@ -445,6 +501,34 @@ if (timeUntilHide > 0) {
 } else {
   timerContainer.style.display = 'none';
 }
+
+
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
