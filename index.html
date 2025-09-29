@@ -268,6 +268,7 @@
 </head>
 <body>
       <script>
+        window.onload = function() {
       // Create the timer container and all its elements
       let timerTitle;
       let timerContainer;
@@ -367,7 +368,7 @@ createTimerElements();
 
 // Set your target date here (YYYY, MM-1, DD, HH, MM, SS)
 // Note: Months are 0-indexed (0 = January, 11 = December)
-const targetDate = new Date("2025-09-30T23:59:59Z").getTime();
+const targetDate = new Date("2025-10-30T23:59:59Z").getTime();
 // Set the target date to 5 seconds from now for testing
 // const targetDate = new Date(Date.now() + 5 * 1000).getTime();
 
@@ -512,7 +513,7 @@ if (timeUntilHide > 0) {
   timerContainer.style.display = 'none';
 }
 
-
+        };
 </script>
 </body>
 </html>
